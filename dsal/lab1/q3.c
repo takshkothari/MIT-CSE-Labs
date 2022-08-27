@@ -5,7 +5,7 @@ void Product(int **a, int *s1, int **b, int *s2, int **c)
 {
 	for(int i=0; i<s2[0]; i++)
 	{
-		for(int j=0; i<s1[1]; j++)
+		for(int j=0; j<s1[1]; j++)
 		{
 			c[i][j]=0;
 			for(int k=0; k<s2[0]; k++)
