@@ -7,7 +7,8 @@ class q2{
 		int n, i, k, x;
 		System.out.println("enter number of elements");
 		n = sc.nextInt();
-		int a[] = new int[n+1];		System.out.println("enter elements");
+		int a[] = new int[n+1];		
+		System.out.println("enter elements");
 		for(i = 0; i < n; i++)
 			a[i] = sc.nextInt();
 
