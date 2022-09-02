@@ -2,7 +2,7 @@
 
 hello bye bye
 
-DSAL - Data Structures and Algorithms Lab
-DSDL - Digital SYstem Design Lab
-OOPL - Object Oriented Programming Lab
+DSAL - Data Structures and Algorithms Lab\n
+DSDL - Digital SYstem Design Lab\n
+OOPL - Object Oriented Programming Lab\n
 OSTL - Open Source Technology Lab
