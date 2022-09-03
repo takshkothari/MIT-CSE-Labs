@@ -18,7 +18,7 @@ void inpMat(int **arr, int *size)
 	for(int i=0; i<size[0]; i++)
 		{
 			for(int j=0; j<size[1]; j++)
-				scanf("%d ", &arr[i][j]);
+				scanf("%d", &arr[i][j]);
 		}
 }
 void main()
