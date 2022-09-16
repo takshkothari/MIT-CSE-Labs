@@ -6,3 +6,6 @@ push.o: push.c
 
 pop.o: pop.c
 	gcc -c pop.c
+
+display.o: display.c
+	gcc -c display.c
