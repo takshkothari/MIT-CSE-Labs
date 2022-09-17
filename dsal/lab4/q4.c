@@ -13,7 +13,7 @@ int tower(int n, char source, char dest, char aux)
         tower(n - 1, source, aux, dest);
         printf("\nmove disk %d from peg %c to peg %c", n, source, dest);
         c++;
-        tower(n - 1, aux, source, dest);
+        tower(n - 1, aux, dest, source);
     }
     return c;
 }
