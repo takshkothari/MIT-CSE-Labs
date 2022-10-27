@@ -4,9 +4,9 @@ module q2(w,f,g,h);
 	wire [15:0] z;
 	d416 s0(w,1'b1,z);
 	
-	assign f = z[11] | z[10] | z[7] | z[3] | z[14] | z[6];
-	assign g = z[14] | z[10] | z[1] | z[0];
-	assign h = z[1] | z[0] | z[15] | z[14] | z[7] | z[3];
+	assign f = z[10] | z[11] | z[3] | z[7] | z[6] | z[14];
+	assign g = z[10] | z[14] | z[2] | z[3];
+	assign h = z[0] | z[1] | z[14] | z[15] | z[3] | z[7];
 endmodule
 	
 
