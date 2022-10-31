@@ -30,7 +30,6 @@ class Student {
             throw sfe;
         }
         GregorianCalendar gcal = new GregorianCalendar(y, m, d);
-        // String y = calcYear(DateOJ);
         String st = Integer.toString(gcal.get(1));
         String yst = st.substring(2, 4);
         String x = Integer.toString(count);
