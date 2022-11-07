@@ -1,7 +1,5 @@
 import java.util.*;
 
-import javax.lang.model.util.ElementScanner6;
-
 class q1 {
     static <T> void swap(T arr[], int a, int b) {
         T c = arr[a];
