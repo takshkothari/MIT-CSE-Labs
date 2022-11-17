@@ -1,0 +1,193 @@
+$date
+	Thu Nov 17 11:21:46 2022
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module qd_tb $end
+$var wire 4 ! Q [3:0] $end
+$var reg 1 " clear $end
+$var reg 1 # clk $end
+$scope module qd $end
+$var wire 1 " clear $end
+$var wire 1 # clk $end
+$var wire 4 $ Q [3:0] $end
+$scope module s0 $end
+$var wire 1 # clk $end
+$var wire 1 " resetn $end
+$var wire 1 % t $end
+$var reg 1 & q $end
+$upscope $end
+$scope module s1 $end
+$var wire 1 # clk $end
+$var wire 1 " resetn $end
+$var wire 1 ' t $end
+$var reg 1 ( q $end
+$upscope $end
+$scope module s2 $end
+$var wire 1 # clk $end
+$var wire 1 " resetn $end
+$var wire 1 ) t $end
+$var reg 1 * q $end
+$upscope $end
+$scope module s3 $end
+$var wire 1 # clk $end
+$var wire 1 " resetn $end
+$var wire 1 + t $end
+$var reg 1 , q $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0,
+0+
+0*
+0)
+0(
+0'
+0&
+1%
+b0 $
+0#
+0"
+b0 !
+$end
+#20
+1#
+#40
+1'
+b1 !
+b1 $
+1&
+0#
+1"
+#60
+1#
+#80
+0'
+0&
+b10 !
+b10 $
+1(
+0#
+#100
+1#
+#120
+1)
+1'
+b11 !
+b11 $
+1&
+0#
+#140
+1#
+#160
+0)
+0+
+0'
+0&
+0(
+b100 !
+b100 $
+1*
+0#
+#180
+1#
+#200
+1'
+b101 !
+b101 $
+1&
+0#
+#220
+1#
+#240
+0'
+0&
+b110 !
+b110 $
+1(
+0#
+#260
+1#
+#280
+1+
+1)
+1'
+b111 !
+b111 $
+1&
+0#
+#300
+1#
+#320
+0)
+0+
+0'
+0&
+0(
+0*
+b1000 !
+b1000 $
+1,
+0#
+#340
+1#
+#360
+1'
+b1001 !
+b1001 $
+1&
+0#
+#380
+1#
+#400
+0'
+0&
+b1010 !
+b1010 $
+1(
+0#
+#420
+1#
+#440
+1)
+1'
+b1011 !
+b1011 $
+1&
+0#
+#460
+1#
+#480
+0)
+0+
+0'
+0&
+0(
+b1100 !
+b1100 $
+1*
+0#
+#500
+1#
+#520
+1'
+b1101 !
+b1101 $
+1&
+0#
+#540
+1#
+#560
+0'
+0&
+b1110 !
+b1110 $
+1(
+0#
