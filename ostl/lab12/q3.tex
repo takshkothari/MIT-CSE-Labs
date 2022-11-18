@@ -1,0 +1,22 @@
+\documentclass{beamer}
+\usepackage{blindtext}
+\usepackage[backend=bibtex]{biblatex}
+\bibliography{ref}
+\begin{document}
+	\begin{frame}
+	\title{Hello \LaTeX{}}
+	\institute{\inst{1} mit}
+	\date{\today}
+	\subtitle{hehe}
+	\maketitle
+	\end{frame}
+	\begin{frame}[allowframebreaks]
+	\frametitle{references}
+	marvel\cite{spidey} and harry potter\cite{hag}
+	\end{frame}
+	\begin{frame}[allowframebreaks]
+	\frametitle{bibliography}
+	\nocite{*}
+	\printbibliography
+	\end{frame}
+\end{document}

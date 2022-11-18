@@ -1,0 +1,126 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nty/global//global/global}
+  \entry{anon}{article}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         family={Anonymous},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{A1}
+    \strng{fullhash}{A1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{pages}{99\bibrangedash 121}
+    \field{title}{Unknown}
+    \field{volume}{11}
+    \field{journaltitle}{Know Unknown}
+    \field{year}{2012}
+  \endentry
+
+  \entry{hag}{article}{}
+    \name{author}{1}{}{%
+      {{hash=H}{%
+         family={Hagrid},
+         familyi={H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{H1}
+    \strng{fullhash}{H1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{pages}{35\bibrangedash 53}
+    \field{title}{Harry yer a wizard!}
+    \field{volume}{1}
+    \field{journaltitle}{Harry Potter}
+    \field{year}{1997}
+  \endentry
+
+  \entry{johnny}{article}{}
+    \name{author}{1}{}{%
+      {{hash=JJ}{%
+         family={John},
+         familyi={J\bibinitperiod},
+         given={John},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{JJ1}
+    \strng{fullhash}{JJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \field{pages}{42\bibrangedash 52}
+    \field{title}{Long Johns}
+    \field{volume}{69}
+    \field{journaltitle}{Food}
+    \field{year}{2019}
+  \endentry
+
+  \entry{Tako19}{article}{}
+    \name{author}{1}{}{%
+      {{hash=KT}{%
+         family={Kothari},
+         familyi={K\bibinitperiod},
+         given={Taksh},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KT1}
+    \strng{fullhash}{KT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{pages}{80\bibrangedash 90}
+    \field{title}{Bibliography}
+    \field{volume}{12}
+    \field{journaltitle}{OSTL}
+    \field{year}{2022}
+  \endentry
+
+  \entry{spidey}{article}{}
+    \name{author}{1}{}{%
+      {{hash=PP}{%
+         family={Parker},
+         familyi={P\bibinitperiod},
+         given={Peter},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PP1}
+    \strng{fullhash}{PP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{pages}{148\bibrangedash 162}
+    \field{title}{Mr. Stark i don't feel so good}
+    \field{volume}{5}
+    \field{journaltitle}{Infinity War}
+    \field{year}{2018}
+  \endentry
+\enddatalist
+\endinput
