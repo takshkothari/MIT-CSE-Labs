@@ -8,15 +8,15 @@
 <body>
 
     <div ng-app="myApp" ng-controller="myController">
-        <select ng-model="Monthlist">
-            <option ng-repeat="x in monthsList">{{x}}</option>
+        <select ng-model="Months">
+            <option ng-repeat="x in Months">{{x}}</option>
         </select>
     </div>
 
     <script>
         var myApp = angular.module("myApp", []);
         myApp.controller('myController', function ($scope) {
-            $scope.monthsList = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            $scope.Months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         });
     </script>
 
