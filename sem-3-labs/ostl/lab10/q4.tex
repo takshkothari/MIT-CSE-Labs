@@ -1,0 +1,55 @@
+\documentclass{beamer}
+\usepackage{blindtext}
+
+\begin{document}
+    \begin{frame}
+        \title{Introduction to \LaTeX{}}
+        \institute{\inst{1} mit \and \inst2{2} manipal}
+        \author{taco\inst{1} \and 
+        abc\inst{1} \and
+        xyz\inst{2}}
+        \date{\today}
+        \subtitle{heh}
+        \maketitle
+    \end{frame}
+	\begin{frame}
+		\frametitle{nooooo}
+		\begin{block}{}
+			oh no
+		\end{block}
+		\begin{alertblock}{Careful}
+			whoaaaa
+		\end{alertblock}
+	\end{frame}
+    \begin{frame}
+    \tableofcontents
+        \frametitle{What are we}
+        \section{humans}
+        excellent question
+    \end{frame}
+    \begin{frame}
+        \frametitle{Why are we}
+        \tableofcontents
+        excellent question again
+    \end{frame}
+    \begin{frame}
+    	\frametitle{fruits}
+    	\begin{overlayarea}{\textwidth}{\textheight}
+    		\begin{itemize}
+    			\item Apple
+    			\pause
+    			\item Banana
+    			\pause
+    			\item Cherry
+    		\end{itemize}
+    	\end{overlayarea}
+    \end{frame}
+    \begin{frame}
+    \frametitle{CSS}
+    \setbeamercovered{highly dynamic}
+    \onslide<1>{This is the first sentence in the frame.}
+    \only<2>{This is the second sentence in the frame.}
+    \only<3>{This is the third sentence in the frame.}
+    \only<4>{End of overlays.}
+    \end{frame}
+\end{document}

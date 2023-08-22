@@ -1,0 +1,24 @@
+<html>
+
+<head>
+    <script src="angular.js"></script>
+    <title>q5</title>
+</head>
+
+<body>
+
+    <div ng-app="myApp" ng-controller="myController">
+        {{word | lowercase}} <br>
+        {{word | uppercase}}
+    </div>
+
+    <script>
+        var myApp = angular.module("myApp", []);
+        myApp.controller('myController', function ($scope) {
+            $scope.word = "QwErTy";
+        });
+    </script>
+
+</body>
+
+</html>
