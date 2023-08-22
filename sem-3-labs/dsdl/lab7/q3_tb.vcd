@@ -1,0 +1,172 @@
+$date
+	Thu Oct 20 09:50:08 2022
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module q3_tb $end
+$var wire 4 ! x [3:0] $end
+$var reg 4 " w [3:0] $end
+$scope module q3 $end
+$var wire 4 # b [3:0] $end
+$var wire 4 $ x [3:0] $end
+$var wire 3 % s [2:0] $end
+$scope module stage0 $end
+$var wire 3 & s [2:0] $end
+$var wire 8 ' w [7:0] $end
+$var reg 1 ( f $end
+$upscope $end
+$scope module stage1 $end
+$var wire 3 ) s [2:0] $end
+$var wire 8 * w [7:0] $end
+$var reg 1 + f $end
+$upscope $end
+$scope module stage2 $end
+$var wire 3 , s [2:0] $end
+$var wire 8 - w [7:0] $end
+$var reg 1 . f $end
+$upscope $end
+$scope module stage3 $end
+$var wire 3 / s [2:0] $end
+$var wire 8 0 w [7:0] $end
+$var reg 1 1 f $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+11
+b1010101 0
+b0 /
+1.
+b10011001 -
+b0 ,
+0+
+b11110 *
+b0 )
+0(
+b11100000 '
+b0 &
+b0 %
+b11 $
+b0 #
+b0 "
+b11 !
+$end
+#20
+1+
+0.
+b100 !
+b100 $
+01
+b1 %
+b1 &
+b1 )
+b1 ,
+b1 /
+b1 "
+b1 #
+#40
+b101 !
+b101 $
+11
+b10 %
+b10 &
+b10 )
+b10 ,
+b10 /
+b10 "
+b10 #
+#60
+1.
+b110 !
+b110 $
+01
+b11 %
+b11 &
+b11 )
+b11 ,
+b11 /
+b11 "
+b11 #
+#80
+b111 !
+b111 $
+11
+b100 %
+b100 &
+b100 )
+b100 ,
+b100 /
+b100 "
+b100 #
+#100
+1(
+0+
+0.
+b1000 !
+b1000 $
+01
+b101 %
+b101 &
+b101 )
+b101 ,
+b101 /
+b101 "
+b101 #
+#120
+b1001 !
+b1001 $
+11
+b110 %
+b110 &
+b110 )
+b110 ,
+b110 /
+b110 "
+b110 #
+#140
+1.
+b1010 !
+b1010 $
+01
+b111 %
+b111 &
+b111 )
+b111 ,
+b111 /
+b111 "
+b111 #
+#160
+b1011 !
+b1011 $
+11
+b10 *
+b1 -
+b1 0
+b0 %
+b0 &
+b0 )
+b0 ,
+b0 /
+b11 '
+b1000 "
+b1000 #
+#180
+1+
+0.
+b1100 !
+b1100 $
+01
+b1 %
+b1 &
+b1 )
+b1 ,
+b1 /
+b1001 "
+b1001 #
+#200
