@@ -1,0 +1,59 @@
+16)
+select name, title as c_name from Student natural join Course natural join Takes where year = 2015;
+
+no rows selected
+
+17)
+select name, salary as inst_salary from Instructor where salary > (select min(salary) from Instructor where dept_name = 'Comp. Sci.');
+
+
+NAME                 INST_SALARY
+-------------------- -----------
+Wu                         90000
+Einstein                   95000
+
+18)
+select name from Instructor where dept_name like '%ch%';
+
+no rows selected
+
+19)
+select name, length(name) from Student;
+
+NAME                 LENGTH(NAME)
+-------------------- ------------
+Zhang                           5
+Shankar                         7
+
+20)
+select dept_name, substr(dept_name, 3, 3) from Department;
+
+DEPT_NAME            SUB
+-------------------- ---
+Biology              olo
+Comp. Sci.           mp.
+
+21)
+select upper(name) from Instructor;
+
+UPPER(NAME)
+--------------------
+SRINIVASAN
+WU
+
+22)
+select id, course_id, NVL(grade, 'NA') from takes where semester = 'Summer';
+
+ID    COURSE_I NV
+----- -------- --
+98988 BIO-101  A
+98988 BIO-301  NA
+
+23)
+select salary, round(salary/3, -2) from Instructor;
+
+
+    SALARY ROUND(SALARY/3,-2)
+---------- ------------------
+     65000              21700
+     90000              30000

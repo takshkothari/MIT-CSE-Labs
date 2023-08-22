@@ -1,0 +1,78 @@
+1) 
+select bdate, address from employee where fname='John' and minit='B' and lname='Smith';
+
+select fname, minit, lname, address from employee natural join department where dname='Research';
+
+2)
+select p.pnumber, p.dnum, e.lname, e.address, e.bdate 
+from project p, department d, employee e 
+where p.dnum = d.dnumber and d.mgr_ssn = e.ssn and p.plocation='Stanford';
+
+3)
+select distinct salary from employee;
+
+4)
+select e.fname, e.lname, s.fname, s.lname
+from employee e, employee s
+where e.super_ssn = s.ssn;
+
+5)
+select p.pnumber
+from project p, works_on w, employee e
+where p.pnumber = w.pno and w.essn = e.ssn and e.lname='Smith'
+union
+select p.pnumber
+from project p, works_on w, employee e, department d
+where p.pnumber = w.pno and p.dnum = d.dnumber and d.mgr_ssn = w.essn and d.mgr_ssn = e.ssn and e.lname='Smith';
+
+6)
+select * from employee where address like '%Houston, TX';
+
+7)
+select e.fname, e.lname, e.salary 
+from employee e, works_on w, project p
+where p.pnumber = works_on.pno and e.ssn = w.essn and p.pname='ProductX';
+
+8)
+select * from employee where dno = 5 and salary between 30000 and 40000;
+
+9)
+select e.fname, e.minit, e.lname, p.pname from employee e, project p, department d 
+where e.dno=p.dnum and e.dno=d.dnumber and p.dnum=d.dnumber order by d.dname, e.lname, e.fname;
+
+10)
+select fname, minit, lname from employee where super_ssn = ssn or super_ssn is null;
+
+11)
+select fname, minit, lname from employee e, dependent d 
+where e.fname=d.dependent_name and e.sex=d.sex;
+
+12)
+select fname from employee where ssn not in (select essn from dependent);
+
+13)
+select distinct fname from employee e, department d, dependent dd 
+where d.mgr_ssn=dd.essn and dd.essn=e.ssn;
+
+14)
+select fname, ssn, pnumber from employee e, project p where e.dno=p.dnum and p.pnumber in (1,2,3);
+
+15)
+select sum(salary), max(salary), min(salary), avg(salary) from employee;
+
+16)
+select sum(salary), max(salary), min(salary), avg(salary) from Employee where dno = (select dnumber from department where dname = 'Research');
+
+17)
+select pnumber, pname, count(distinct ssn) from employee e, project p 
+where e.dno=p.dnum group by pnumber;
+
+18)
+select pnumber, pname, count(distinct ssn) from employee e, project p 
+where e.dno=p.dnum group by pnumber having count(distinct ssn)>2;
+
+19)
+with dep5(dno, count) AS (select dno, count(*) from employee where salary > 40000 group by dno)
+select dep5.dno, dep5.count from dep5 
+where dep5.dno in (select dno from employee group by dno having count(*) > 5);
+

@@ -1,0 +1,31 @@
+8)
+select max(sum_salary) from (select dept_name, sum(salary) as sum_salary from instructor group by dept_name) dept_sum_salary;
+
+9)
+select dept_name, avg_sal from (select dept_name, avg(salary) as avg_sal from instructor group by dept_name having avg(salary)>42000);
+
+10)
+with total_enrol(sec_id, val) as (select sec_id, count(id) from section natural join takes where semester='Spring' and year=2010 group by sec_id)
+select sec_id, max(val) from total_enrol group by sec_id;
+
+11)
+select distinct i.name from instructor i, teaches t1, takes t2, student s
+where i.id = t1.id and t1.course_id = t2.course_id and t2.id = s.id and s.dept_name = 'Comp. Sci.';
+
+12)
+select dept_name, avg_sal from (select dept_name, avg(salary) as avg_sal from instructor group by dept_name having avg(salary)>42000 and count(id)>5);
+
+13)
+with max_budget(val) as (select max(budget) from department)
+select d.dept_name, d.budget from department d, max_budget m where d.budget = m.val;
+
+14)
+with dept_tot_sal(dept_name, tot_sal) as (select dept_name, sum(salary) as tot_sal from instructor group by dept_name), avg_sal(val) as (select avg(tot_sal) from dept_tot_sal)
+select d.dept_name, d.tot_sal from dept_tot_sal d, avg_sal a where d.tot_sal>a.val;
+
+15)
+with total_enrol(sec_id, val) as (select sec_id, count(id) from section natural join takes where semester='Fall' and year=2009 group by sec_id)
+select sec_id, max(val) from total_enrol group by sec_id;
+
+16)
+with Fin_TotCred(totcred) as (select tot_cred from student where dept_name='Finance') select dept_name, sum(tot_cred) from student, Fin_TotCred group by dept_name having sum(tot_cred)>max(totcred);

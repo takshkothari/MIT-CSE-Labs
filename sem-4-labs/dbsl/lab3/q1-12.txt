@@ -1,0 +1,45 @@
+1)
+select title from section natural join course where semester = 'Fall' and year = 2009
+union
+select title from section natural join course where semester = 'Spring' and year = 2010;
+
+2)
+select title from section natural join course where semester = 'Fall' and year = 2009
+intersect
+select title from section natural join course where semester = 'Spring' and year = 2010;
+
+3)
+select title from section natural join course where semester = 'Fall' and year = 2009
+minus
+select title from section natural join course where semester = 'Spring' and year = 2010;
+
+4)
+select title from course where course_id not in(select course_id from takes);
+
+5)
+select title from section natural join course where semester = 'Fall' and year = 2009
+and title in(select title from section natural join course where semester = 'Spring' and year = 2010);
+
+6)
+select count(ID) from takes where course_id in(select course_id from teaches where ID = '10101');
+
+7)
+select title from section natural join course where semester = 'Fall' and year = 2009
+and title not in(select title from section natural join course where semester = 'Spring' and year = 2010);
+
+8)
+select name from student where name in(select name from instructor);
+
+9)
+select name from instructor where salary > some
+(select salary from instructor where dept_name = 'Biology');
+
+10)
+select name from instructor where salary > all
+(select salary from instructor where dept_name = 'Biology');
+
+11)
+select dept_name, avg(salary) from instructor group by dept_name having avg(salary)>=all(select avg(salary) from instructor group by dept_name);
+
+12)
+select dept_name, budget from department where budget<(select avg(salary) from instructor);

@@ -1,0 +1,20 @@
+1)
+select count(id), course_id from takes group by course_id;
+
+2)
+select dept_name, count(distinct id) from department natural join course c, takes t where c.course_id = t.course_id group by dept_name having count(distinct id)>10;
+
+3)
+select count(course_id), dept_name from course group by dept_name;
+
+4)
+select dept_name, avg(salary) from instructor group by dept_name having avg(salary)>42000;
+
+5)
+select count(id), sec_id from section natural join takes where semester = 'Spring' and year = 2009 group by sec_id;
+
+6)
+select course_id, prereq_id from prereq order by course_id;
+
+7)
+select * from instructor order by salary;

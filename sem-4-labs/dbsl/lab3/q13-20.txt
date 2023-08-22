@@ -1,0 +1,31 @@
+13)
+select title from course where exists (select course_id from section 
+where semester = 'Fall'  and year = 2009 and course.course_id = section.course_id)
+intersect
+select title from course where exists (select course_id from section 
+where semester = 'Spring' and year = 2010 and course.course_id = section.course_id);
+
+14)
+select name from student where exists (select t.id from takes t, course c where
+t.course_id = c.course_id and c.dept_name = 'Biology' and student.id = t.id);
+
+15)
+select title from course where course_id in
+(select course_id from section where year = 2009
+group by course_id having count(course_id)<2);
+
+16)
+select name,dept_name from student s where 2<=(select count(id) from takes t where s.id=t.id and s.dept_name='Comp. Sci.' group by id);
+
+17)
+select dept_name, avg_sal from (select dept_name,avg(salary) avg_sal from instructor group by dept_name having avg(salary)>42000);
+
+18)
+create view all_courses as select building,room_number from section natural join course where dept_name='Physics' and semester='Fall' and year=2009;
+
+19)
+select * from all_courses;
+
+20)
+create view dept_tot_sal as select dept_name,sum(salary) tot_salary from instructor group by dept_name;
+select * from dept_tot_sal;

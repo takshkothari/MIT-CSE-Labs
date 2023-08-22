@@ -1,0 +1,39 @@
+1) 
+create table Employee(EmpNo numeric(5) primary key,
+EmpName varchar(20) not null,
+Gender character(1) not null check (Gender = 'M' OR Gender = 'F'),
+Salary numeric(8) not null,
+Address varchar(20) not null,
+DNo numeric(5));
+
+2) 
+create table Department(
+DeptNo numeric(5) primary key,
+DeptName varchar(20) unique);
+
+3)
+alter table Employee add constraint FK_DNo foreign key(DNo) references Department(DeptNo);
+
+4)
+insert into Department values (1,'cse');
+insert into Department values (2,'it');
+insert into Department values (3,'ece');
+
+insert into Employee values (1,'taksh','M',69000,'Manipal',1);
+insert into Employee values (2,'sara','F',42000,'Manipal',3);
+insert into Employee values (3,'jay','M',30000,'Manipal',2);
+
+5)
+insert into Department values (2,'mechx');
+insert into Employee values (3,NULL,'N',30000,'Manipal',2);
+insert into Employee values (4,'ronit','N',NULL,'Manipal',2);
+
+6)
+delete from Department where DeptNo = 2;
+
+7)
+alter table Employee drop constraint FK_DNo;
+alter table Employee add constraint FK_DNo foreign key(DNo) references Department(DeptNo) on delete cascade;
+
+8)
+alter table Employee modify(constraint defSal Salary default 10000);

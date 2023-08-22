@@ -1,0 +1,55 @@
+9)
+select name, dept_name from student;
+
+NAME                 DEPT_NAME
+-------------------- --------------------
+Zhang                Comp. Sci.
+Shankar              Comp. Sci.
+
+10)
+select * from Instructor where dept_name = 'Comp. Sci.';
+
+ID    NAME                 DEPT_NAME                SALARY
+----- -------------------- -------------------- ----------
+10101 Srinivasan           Comp. Sci.                65000
+45565 Katz                 Comp. Sci.                75000
+83821 Brandt               Comp. Sci.                92000
+
+11)
+select title from Course where dept_name = 'Comp. Sci.' and credits = 3;
+
+TITLE
+--------------------------------------------------
+Robotics
+Image Processing
+Database System Concepts
+
+12)
+select course_id, title from Course where course_id in(select course_id from takes where id = 12345);
+
+COURSE_I TITLE
+-------- --------------------------------------------------
+CS-101   Intro. to Computer Science
+CS-190   Game Design
+
+13)
+select * from Instructor where salary between 40000 and 90000;
+
+ID    NAME                 DEPT_NAME                SALARY
+----- -------------------- -------------------- ----------
+10101 Srinivasan           Comp. Sci.                65000
+12121 Wu                   Finance                   90000
+
+14)
+select id from instructor where id not in (select id from teaches);
+
+ID
+-----
+33456
+58583
+76543
+
+15)
+select name, title, year from Student natural join Course natural join Section where room_number = 303;
+
+no rows selected
