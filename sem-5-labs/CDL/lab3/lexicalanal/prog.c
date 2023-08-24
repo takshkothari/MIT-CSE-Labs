@@ -111,19 +111,19 @@ struct token getNextToken(FILE *fin) {
                 case '-':
                     d = fgetc(fin);
 		            if (d == '+') {
-		                fillToken(&tkn, c, row, col, "++");
-		                strcpy(tkn.lexeme, "++");
+		                fillToken(&tkn, c, row, col, "--");
+		                strcpy(tkn.lexeme, "--");
 		                gotToken = 1;
 		                col += 2;
 		            }
 		            else if (d == '=') {
-		                fillToken(&tkn, c, row, col, "+=");
-		                strcpy(tkn.lexeme, "+=");
+		                fillToken(&tkn, c, row, col, "-=");
+		                strcpy(tkn.lexeme, "-=");
 		                gotToken = 1;
 		                col += 2;
 		            }
 		            else {
-		                fillToken(&tkn, c, row, col, "+");
+		                fillToken(&tkn, c, row, col, "-");
 		                gotToken = 1;
 		                ++col;
 		                fseek(fin, -1, SEEK_CUR);
