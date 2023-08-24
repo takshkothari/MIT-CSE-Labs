@@ -110,7 +110,7 @@ struct token getNextToken(FILE *fin) {
 
                 case '-':
                     d = fgetc(fin);
-		            if (d == '+') {
+		            if (d == '-') {
 		                fillToken(&tkn, c, row, col, "--");
 		                strcpy(tkn.lexeme, "--");
 		                gotToken = 1;
