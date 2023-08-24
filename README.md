@@ -1,3 +1,3 @@
 # MIT-CSE-Labs
 
-Lab manuals and codes for Computer Science Engineering at Manipal Institute of Technology, Manipal
+Lab manuals and codes required for a Computer Science Engineering Degree at Manipal Institute of Technology, Manipal
