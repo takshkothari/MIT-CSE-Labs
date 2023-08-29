@@ -1,0 +1,22 @@
+#include <unistd.h>
+#include <stdio.h>
+#include <string.h>
+#include <sys/stat.h>
+#include <stdlib.h>
+void main() {
+    char oldPath[100], newPath[100];
+    printf("Old path: ");
+    scanf("%s", oldPath); 
+    printf("New path: ");
+    scanf("%s", newPath);
+    int res = link(oldPath, newPath);
+    if (res == 0) {
+        res = unlink(oldPath);
+        if (res == 0)
+            printf("Moved Successfully\n");
+        else
+            printf("Error unlinking\n");
+    }
+    else
+        printf("Error linking\n");
+}
