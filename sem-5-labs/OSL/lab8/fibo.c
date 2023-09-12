@@ -13,12 +13,11 @@ void* child_thread(void * param) {
     }
     return (void *)id;
 }
-int main() {
+int main(int argc, char *argv[]) {
     pthread_t thread[100];
     int return_value[100];
     int n;
-    printf("Enter number of Fibo numbers ");
-    scanf("%d", &n);
+    n = atoi(argv[1]);
 
     for (int i = 0; i < n; i++) {
         pthread_create(&thread[i], 0, &child_thread, (void*)i);
