@@ -15,5 +15,5 @@ Lab manuals and codes required for a Computer Science Engineering Degree at Mani
 
 **Semester 5**<br>
 -> [Operating System Lab](https://github.com/takshkothari/MIT-CSE-Labs/tree/main/sem-5-labs/OSL)<br>
--> [Compiler Design Lab](https://github.com/takshkothari/MIT-CSE-Labs/tree/main/sem-5-labs/CNL)<br>
--> [Computer Networks Lab](https://github.com/takshkothari/MIT-CSE-Labs/tree/main/sem-5-labs/CDL)<br>
+-> [Compiler Design Lab](https://github.com/takshkothari/MIT-CSE-Labs/tree/main/sem-5-labs/CDL)<br>
+-> [Computer Networks Lab](https://github.com/takshkothari/MIT-CSE-Labs/tree/main/sem-5-labs/CNL)<br>
