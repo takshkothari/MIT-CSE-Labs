@@ -5,10 +5,10 @@ int pof = 0;
 int nef = 0;
 %}
 %%
-[a-zA-Z]+ { words++; chars += strlen(yytext); }
-" " { chars++; blank++; }
-\n { lines++; }
-. { chars++; }
+"-"[0-9]+\.[0-9]+ { nef++; }
+"-"[0-9]+ { nei++; }
+[+]?[0-9]+\.[0-9]+ { pof++; }
+[+]?[0-9]+ { poi++; }
 %%
 int main(int argc, char **argv)
 {
