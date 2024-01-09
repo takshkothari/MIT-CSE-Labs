@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>The jQuery Example</title>
+        <script type = "text/javascript" src = "jquery-3.7.1.min.js">
+        </script>
+        <script type = "text/javascript" language = "javascript">
+        $(document).ready(function() {
+            var title = $("p").attr("title");
+            $("#divid").text(title);
+            $("#myimg").attr("src", "html.png");
+        });
+        </script>
+        <script type = "text/javascript" language = "javascript">
+        $(document).ready(function() {
+            $("div").click(function () {
+                $(this).replaceWith("<h1>JQuery is Great</h1>");
+            });
+        });
+        </script>
+    </head>
+    <body>
+        <div>
+            <p title = "Bold and Brave">This is first paragraph.</p>
+            <p id = "myid">This is second paragraph.</p>
+            <div id = "divid"></div>
+            <img id = "myimg" alt = "Sample image" />
+        </div>
+    </body>
+</html>
+           
