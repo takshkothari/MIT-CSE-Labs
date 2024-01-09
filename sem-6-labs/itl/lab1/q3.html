@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <title>q3</title>
+        <style>
+            #left,#right{
+                width:50%;
+                height:100vh;
+                border:2px solid black;
+                padding:2rem;
+            }
+            #greet{
+                margin-top:5rem;
+                margin-bottom:2rem;
+            }
+        </style>
+        <script src="jquery-3.7.1.min.js"></script>
+        <script type="text/javascript" language="javascript">
+            $(document).ready(function () {
+                $("button").click(function () {
+                    var bgco = $("#bgc").children("option:selected").val();
+                    var font = $("#fo").children("option:selected").val();
+                    var fsi = $("#fs").val();
+                    var gr = $("#greeting").val();
+                    var bds = $('input[type="radio"]:checked'); 
+                    if (bds.length > 0) {
+                        var [b] = bds;
+                        var bdss = b.value;
+                    }
+                    else {
+                        var bdss = "none";
+                    }
+                    var imgc = $('input[type="checkbox"]:checked'); 
+                    if (imgc.length == 0) {
+                        $("img").css("display", "none");
+                    }
+                    else {
+                        $("img").css("display", "inline-block");
+                    }
+                    $("#right").css("background-color", bgco);
+                    $("#right").css("font-family", font);
+                    $("#right").css("font-size", fsi + "px");
+                    $("#right").css("border", "2px " + bdss + " black");
+                    $("#greet").text(gr);
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <div id="container" style="display: flex;">
+            <div id="left" style="background-color: cornsilk;">
+                <label for="bgc">Choose a background color:</label><br><br>
+                <select id="bgc" name="color">
+                    <option value="yellow" selected>Yellow</option>
+                    <option value="green">Green</option>
+                    <option value="red">Red</option>
+                    <option value="blue">Blue</option>
+                    <option value="pink">Pink</option>
+                </select>
+                <br><br>
+                <label for="fo">Choose a font:</label><br><br>
+                <select id="fo" name="fon">
+                    <option value="Arial" selected>Arial</option>
+                    <option value="Cursive">Cursive</option>
+                    <option value="Monospace">Monospace</option>
+                </select>
+                <br><br>
+
+                <label for="fs">Specify a numeric font size:</label><br><br>
+                <input type="text" id="fs"><br><br>
+
+                <label>Choose a border style:</label><br><br>
+                <input type="radio" id="none" name="bod_style" value="none">
+                <label for="none">None</label><br>
+                <input type="radio" id="double" name="bod_style" value="double">
+                <label for="double">Double</label><br>
+                <input type="radio" id="solid" name="bod_style" value="solid">
+                <label for="solid">Solid</label><br><br>
+
+                <input type="checkbox" id="imgd" name="imageDefault" value="image">
+                <label for="imgd">Add the Default Picture</label><br><br>
+
+                <label for="greeting">Enter the greeting text below:</label><br><br>
+                <textarea rows="5" cols="40" name="greeting" id="greeting"></textarea><br><br>
+
+                <button type="button">Submit</button><br><br>
+            </div>
+            <div id="right" style="text-align: center;">
+                <div id="greet">Default text here</div>
+                <img src="download.jpg" alt="cake" width="200" height="200" style="display: none;">
+            </div>
+        </div>
+    </body>
+</html>

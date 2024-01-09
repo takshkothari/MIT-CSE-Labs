@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>q4</title>
+        <style>
+            #container {
+                width: 14%;
+                height: 35vh;
+                border: 2px solid black;
+                padding: 2rem;
+                background-color: lightblue;
+                margin-left: 40%;
+                margin-top: 10%;
+            }
+        </style>
+        <script src="jquery-3.7.1.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                const pricesLaptop = { HP: 75000, Motorola: 30000, Samsung: 55000, Nokia: 11000, Apple: 100000 }
+                const pricesMobile = { HP: 2500, Motorola: 3000, Samsung: 25000, Nokia: 1000, Apple: 80000 }
+                $("button").click(function () {
+                    let company = $("#items").children("option:selected").val()
+                    let [laptop] = $("#Laptop:checked")
+                    let [mobile] = $("#Mobile:checked")
+                    let quantity = parseInt($("#qty").val())
+                    let result = 0;
+                    if (laptop) {
+                        result += quantity*pricesLaptop[company]
+                    }
+                    if (mobile) {
+                        result += quantity * pricesMobile[company]
+                    }
+                    alert(`You have purchased ${quantity} items and your total Bill Amount is : ${result}`);
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <div id="container">
+            <label for="items">Choose a brand:</label><br><br>
+            <select id="items" name="items">
+                <option value="HP" selected>HP</option>
+                <option value="Nokia">Nokia</option>
+                <option value="Samsung">Samsung</option>
+                <option value="Motorola">Motorola</option>
+                <option value="Apple">Apple</option>
+            </select>
+            <br><br>
+
+            <input type="checkbox" id="Mobile" name="Mobile" value="Mobile">
+            <label for="Mobile">Mobile</label><br><br>
+            <input type="checkbox" id="Laptop" name="Laptop" value="Laptop">
+            <label for="Laptop">Laptop</label><br><br>
+
+            <label for="qty">Enter quantity:</label><br><br>
+            <input id="qty" type="text" /><br><br>
+
+            <button type="button" style="margin-top: 1rem;">Produce Bill!</button>
+        </div>
+    </body>
+</html>
