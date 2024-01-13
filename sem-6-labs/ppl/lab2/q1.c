@@ -4,12 +4,10 @@
 
 void toggle(int n, char* word){
 	for(int i = 0; i<n; i++){
-		if(word[i]>='a' && word[i]<='z'){
+		if(word[i]>='a' && word[i]<='z')
 			word[i] -= 32;
-		}
-		else if(word[i]>='A' && word[i]<='Z'){
+		else if(word[i]>='A' && word[i]<='Z')
 			word[i] += 32;
-		}
 	}
 }
 
@@ -26,18 +24,16 @@ int main(int argc, char* argv[]) {
         l = strlen(w);
         MPI_Ssend(&l, 1, MPI_INT, 1, 0, MPI_COMM_WORLD);
         MPI_Ssend(w, l, MPI_CHAR, 1, 1, MPI_COMM_WORLD);
-        fprintf(stdout, "sending %s from p1 \n", w);
+        fprintf(stdout, "sending %s\n", w);
         MPI_Recv(w, l, MPI_CHAR, 1, 2, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-        fprintf(stdout, "received %s from p2\n", w);
+        fprintf(stdout, "received %s\n", w);
         fflush(stdout);
     }
     else {
         MPI_Recv(&l, 1, MPI_INT, 0, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
         MPI_Recv(w, l, MPI_CHAR, 0, 1, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-        // fprintf(stdout, "received %s from p1\n", w);
         toggle(l, w);
         MPI_Ssend(w, l, MPI_CHAR, 0, 2, MPI_COMM_WORLD);
-        // fprintf(stdout, "sending %s from p2 \n", w);
         fflush(stdout);
     }
     MPI_Finalize();
