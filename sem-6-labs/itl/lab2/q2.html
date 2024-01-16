@@ -1,0 +1,106 @@
+<!Doctype HTML>
+<html>
+    <head>
+        <title>Employee Data</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Employee Database</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Add Employee</h3>
+                    <form id="addEmployeeForm">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="role">Role:</label>
+                            <input type="text" class="form-control" id="role" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="salary">Salary:</label>
+                            <input type="number" class="form-control" id="salary" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </form>
+                </div>
+                <div class="col-md-8">
+                    <h3>Employee List</h3>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Role</th>
+                                <th>Salary</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="employeeList">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function() {
+                loadEmployeeList();
+                $('#addEmployeeForm').submit(function(event) {
+                    event.preventDefault();
+                    var name = $('#name').val();
+                    var role = $('#role').val();
+                    var salary = $('#salary').val();
+                    var employee = {
+                        name: name,
+                        role: role,
+                        salary: salary
+                    };
+                    var employees = getEmployeesFromLocalStorage();
+                    employees.push(employee);
+                    localStorage.setItem('employees', JSON.stringify(employees));
+                    clearFormFields();
+                    loadEmployeeList();
+                });
+                $(document).on('click', '.deleteEmployee', function() {
+                    var index = $(this).data('index');
+                    var employees = getEmployeesFromLocalStorage();
+                    employees.splice(index, 1);
+                    localStorage.setItem('employees', JSON.stringify(employees));
+                    loadEmployeeList();
+                });
+            });
+            function loadEmployeeList() {
+                var employees = getEmployeesFromLocalStorage();
+                var html = '';
+                for (var i = 0; i < employees.length; i++) {
+                    var employee = employees[i];
+                    html += '<tr>';
+                    html += '<td>' + employee.name + '</td>';
+                    html += '<td>' + employee.role + '</td>';
+                    html += '<td>' + employee.salary + '</td>';
+                    html += '<td><button class="btn btn-danger deleteEmployee" data-index="' + i + '">Delete</button></td>';
+                    html += '</tr>';
+                }
+                $('#employeeList').html(html);
+            }
+            function getEmployeesFromLocalStorage() {
+                var employees = localStorage.getItem('employees');
+                if (employees) 
+                    return JSON.parse(employees);
+                else 
+                    return [];
+            }
+            function clearFormFields() {
+                $('#name').val('');
+                $('#role').val('');
+                $('#salary').val('');
+            }
+        </script>
+    </body>
+</html>
