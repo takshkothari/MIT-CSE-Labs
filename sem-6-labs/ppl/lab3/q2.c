@@ -2,10 +2,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(int argv, char *argc[]){
+int main(int argc, char *argv[]){
 	int rank, size, *n, *arr, res, m;
 
-	MPI_Init(&argv, &argc);
+	MPI_Init(&argc, &argv);
 	MPI_Comm_size(MPI_COMM_WORLD, &size);
 	MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 	
@@ -36,4 +36,4 @@ int main(int argv, char *argc[]){
 	free(arr);
 	MPI_Finalize();
 	return 0;
-}
+} 

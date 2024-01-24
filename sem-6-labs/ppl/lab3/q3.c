@@ -3,10 +3,10 @@
 #include <stdlib.h>
 #include <string.h>
 
-int main(int argv, char *argc[]){
+int main(int argc, char *argv[]){
 	int rank, size, res, l;
 
-	MPI_Init(&argv, &argc);
+	MPI_Init(&argc, &argv);
 	MPI_Comm_size(MPI_COMM_WORLD, &size);
 	MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 	char string[100], *str;
