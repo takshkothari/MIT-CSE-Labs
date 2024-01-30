@@ -3,7 +3,7 @@ class q2:
 		for i in range(0, len(arr)):
 			for j in range(i+1, len(arr)):
 				if arr[i] + arr[j] == key:
-					print(i+1, j+1, "\n")
+					print(i+1, j+1)
 
 n = int(input("enter number of elements : "))
 arr = list(map(int, input("\nenter the numbers: ").strip().split()))[:n]

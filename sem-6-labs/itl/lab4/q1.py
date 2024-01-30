@@ -1,5 +1,5 @@
-class subs:
-	def ssets(self, sset):
+class q1:
+	def subs(self, sset):
 		return self.subsetsRecur([], sorted(sset))
 
 	def subsetsRecur(self, current, sset):
@@ -9,4 +9,4 @@ class subs:
 
 n = int(input("enter number of elements : "))
 arr = list(map(int, input("\nenter the numbers: ").strip().split()))[:n]
-print(subs().ssets(arr))
+print(q1().subs(arr))
