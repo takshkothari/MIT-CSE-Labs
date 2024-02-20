@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Elective Subjects Preference</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Choose your preference for Elective Subjects</h2>
+        <div class="row mt-5">
+        <div class="col">
+            <img src="deep_learning_textbook.jpg" alt="Deep Learning Textbook" class="img-fluid">
+            <button id="deepLearningBtn" class="btn btn-primary mt-2">Vote for Deep Learning</button>
+            <p>Votes: <span id="deepLearningVotes">5</span></p>
+        </div>
+        <div class="col">
+            <img src="software_testing_textbook.jpg" alt="Software Testing Textbook" class="img-fluid">
+            <button id="softwareTestingBtn" class="btn btn-primary mt-2">Vote for Software Testing</button>
+            <p>Votes: <span id="softwareTestingVotes">5</span></p>
+        </div>
+        <div class="col">
+            <img src="digital_image_processing_textbook.jpg" alt="Digital Image Processing Textbook" class="img-fluid">
+            <button id="digitalImageProcessingBtn" class="btn btn-primary mt-2">Vote for Digital Image Processing</button>
+            <p>Votes: <span id="digitalImageProcessingVotes">5</span></p>
+        </div>
+        </div>
+        <button id="submitBtn" class="btn btn-primary mt-3">Submit</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+        var deepLearningVotes = 5;
+        var softwareTestingVotes = 5;
+        var digitalImageProcessingVotes = 5;
+
+        $("#deepLearningBtn").click(function() {
+            deepLearningVotes++;
+            $("#deepLearningVotes").text(deepLearningVotes);
+        });
+
+        $("#softwareTestingBtn").click(function() {
+            softwareTestingVotes++;
+            $("#softwareTestingVotes").text(softwareTestingVotes);
+        });
+
+        $("#digitalImageProcessingBtn").click(function() {
+            digitalImageProcessingVotes++;
+            $("#digitalImageProcessingVotes").text(digitalImageProcessingVotes);
+        });
+
+        $("#submitBtn").click(function() {
+            if (deepLearningVotes < 10) {
+            $("#deepLearningVotes").text("Not offered this semester");
+            }
+            if (softwareTestingVotes < 10) {
+            $("#softwareTestingVotes").text("Not offered this semester");
+            }
+            if (digitalImageProcessingVotes < 10) {
+            $("#digitalImageProcessingVotes").text("Not offered this semester");
+            }
+        });
+        });
+    </script>
+</body>
+</html>

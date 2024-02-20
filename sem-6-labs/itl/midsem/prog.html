@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Elective Subjects Preference</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Elective Subjects Preference Poll</h2>
+        <div class="row" style="min-height: 400px; text-align: center;">
+            <div class="col">
+                <h4>Deep Learning</h4>
+                <img src="deeplearning.jpg" alt="Deep Learning Textbook" height="300">
+            </div>
+            <div class="col">
+                <br><br><br><br><br><br>
+                <button id="deepLearningBtn" class="btn btn-primary mt-2">Vote</button>
+                <!-- <p>Votes: <span id="deepLearningVotes">5</span></p> -->
+            </div>
+            <div class="col">
+                <h4>Software Testing And Analysis</h4>
+                <img src="swtesting.jpg" alt="Software Testing Textbook" height="300">
+            </div>
+            <div class="col">
+                <br><br><br><br><br><br>
+                <button id="softwareTestingBtn" class="btn btn-primary mt-2">Vote</button>
+                <!-- <p>Votes: <span id="softwareTestingVotes">5</span></p> -->
+            </div>
+            <div class="column">
+                <h4>Digital Image Processing</h4>
+                <img src="digitalimgproc.jpg" alt="Digital Image Processing Textbook" height="300">
+            </div>
+            <div class="column">
+                <br><br><br><br><br><br>
+                <button id="digitalImageProcessingBtn" class="btn btn-primary mt-2">Vote</button>
+                <!-- <p>Votes: <span id="digitalImageProcessingVotes">5</span></p> -->
+            </div>
+            
+        </div>
+        <button id="submitBtn" class="btn btn-primary mt-3">Submit</button>
+        <div>
+            <h2>Votes Results</h2>
+            <p>Deep Learning: <span id="deepLearningVotes">5</span></p>
+            <p>Software Testing And Analysis: <span id="softwareTestingVotes">5</span></p>
+            <p>Digital Image Processing: <span id="digitalImageProcessingVotes">5</span></p>
+        </div>
+    </div>
+
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+        var deepLearningVotes = 5;
+        var softwareTestingVotes = 5;
+        var digitalImageProcessingVotes = 5;
+
+        $("#deepLearningBtn").click(function() {
+            deepLearningVotes++;
+            $("#deepLearningVotes").text(deepLearningVotes);
+        });
+
+        $("#softwareTestingBtn").click(function() {
+            softwareTestingVotes++;
+            $("#softwareTestingVotes").text(softwareTestingVotes);
+        });
+
+        $("#digitalImageProcessingBtn").click(function() {
+            digitalImageProcessingVotes++;
+            $("#digitalImageProcessingVotes").text(digitalImageProcessingVotes);
+        });
+
+        $("#submitBtn").click(function() {
+            if (deepLearningVotes < 10) {
+            $("#deepLearningVotes").text("Not offered this semester");
+            }
+            if (softwareTestingVotes < 10) {
+            $("#softwareTestingVotes").text("Not offered this semester");
+            }
+            if (digitalImageProcessingVotes < 10) {
+            $("#digitalImageProcessingVotes").text("Not offered this semester");
+            }
+        });
+        });
+    </script>
+</body>
+</html>
